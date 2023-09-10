@@ -57,7 +57,7 @@ fun calculate(expression: String): Double {
         }
     }
 
-    val log = { binary(num, 'l').reduce{ a, b -> log(base = a, x = b) } }
+    val log = { binary(num, 'l').reduce { a, b -> log(base = a, x = b) } }
     val deg = { binary(num, '^').reduce { a, b -> a.pow(b) } }
     val div = {
         binary(deg, '/').reduce { a, b ->
