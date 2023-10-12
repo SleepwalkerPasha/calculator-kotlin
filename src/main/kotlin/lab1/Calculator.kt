@@ -1,3 +1,5 @@
+package lab1
+
 import kotlin.math.log
 import kotlin.math.pow
 
@@ -58,7 +60,7 @@ fun calculate(expression: String): Double {
     }
 
     val log = { binary(num, 'l').reduce { a, b -> log(base = a, x = b) } }
-    val deg = { binary(num, '^').reduce { a, b -> a.pow(b) } }
+    val deg = { binary(log, '^').reduce { a, b -> a.pow(b) } }
     val div = {
         binary(deg, '/').reduce { a, b ->
             if (b != 0.0) {

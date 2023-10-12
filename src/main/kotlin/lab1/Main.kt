@@ -1,3 +1,5 @@
+package lab1
+
 fun main() {
     while (true) {
         try {
