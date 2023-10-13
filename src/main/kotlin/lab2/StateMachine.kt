@@ -53,30 +53,26 @@ class StateMachine(fileName: String) {
         states.forEach {
             println(it)
         }
-        println(inputs)
     }
 
-    fun checkWord(word: String) {
-        checkTerministicState()
-
-        printDeterministicStateMachine()
-
+    fun checkWord(word: String) =
         println("Возможность разобрать строку \"$word\": ${parseWordStateMachine(word)}")
-    }
 
     private fun parseWordStateMachine(word: String): Any {
         var firstState = "q0"
         word.forEach {
-            if (states[firstState]!!.containsInput(it.toString())) {
-                firstState = states[firstState]!!.getFirstLetter(it.toString())
+            if (states[firstState] != null) {
+                if (states[firstState]!!.containsInput(it.toString())) {
+                    firstState = states[firstState]!!.getFirstLetter(it.toString())
+                } else return false
             } else return false
         }
         return firstState.contains("f")
     }
 
-    private fun checkTerministicState() {
+    fun checkTerministicState() {
         if (!isDeterministic) {
-            println("Автомат не детерменирован")
+            println("Автомат недетерменирован")
             nonDeterministicStates.addAll(states.map { it.toPair() })
             states = determinateStateMachine()
             isDeterministic = true
