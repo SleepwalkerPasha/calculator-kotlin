@@ -7,6 +7,7 @@ data class AutomatonConfiguration(val state: String, var inputChain: String, var
 }
 
 fun main() {
-    val pushdownAutomaton = PushdownAutomaton(fileName = "test3")
-    pushdownAutomaton.checkStr("/aaa/")
+    val pushdownAutomaton = PushdownAutomaton(fileName = "test1")
+    pushdownAutomaton.readGramar()
+    pushdownAutomaton.checkStr(readln())
 }

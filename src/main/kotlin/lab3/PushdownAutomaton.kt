@@ -24,10 +24,9 @@ class PushdownAutomaton(
         Z.add(END_MARKER)
         S.add(START_STATE)
         I = ""
-        readGramar(fileName)
     }
 
-    private fun readGramar(fileName: String) {
+    fun readGramar() {
         readFileDirectlyAsText("src/main/resources/$fileName.txt").forEach {
             it.replace("| |", "|~|")
             it.replace(" ", "")
