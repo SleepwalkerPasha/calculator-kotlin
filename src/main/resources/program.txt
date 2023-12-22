@@ -1,0 +1,13 @@
+int main () {
+    for (int a = 0; a < 10;) {
+        if (a > 4) {
+            int b = 0;
+            bool v = 0;
+            char sf = 233;
+            return 121;
+        }
+        if(a == 1) {
+           float vvv = 12;
+        }
+    }
+}

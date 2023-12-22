@@ -149,10 +149,8 @@ class StateMachine(fileName: String) {
         return false
     }
 
-    private fun readFileDirectlyAsText(fileName: String): List<String> = File(fileName).readLines(Charsets.UTF_8)
 }
-
-
+internal fun readFileDirectlyAsText(fileName: String): List<String> = File(fileName).readLines(Charsets.UTF_8)
 class State(
     val isFinal: Boolean,
     val inputs: MutableMap<String, MutableList<String>> = mutableMapOf()

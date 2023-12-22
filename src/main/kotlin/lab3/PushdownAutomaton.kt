@@ -1,5 +1,6 @@
 package lab3
 
+import lab2.readFileDirectlyAsText
 import java.io.File
 import java.util.*
 
@@ -102,7 +103,6 @@ class PushdownAutomaton(
             }
         }
 
-    private fun readFileDirectlyAsText(fileName: String): List<String> = File(fileName).readLines(Charsets.UTF_8)
 
     fun checkStr(input: String) {
         startConfiguration = AutomatonConfiguration(START_STATE, input, END_MARKER + I)
